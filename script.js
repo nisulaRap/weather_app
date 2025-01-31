@@ -39,3 +39,31 @@ async function getFetchData(endPoint, city) {
     const response = await fetch(apiUrl);
     return response.json();
 }
+
+async function updateWeatherInfo(city) {
+    const weatherData = await getFetchData('weather', city);
+
+    if (weatherData.cod != 200) {
+        showDisplaySection(notFoundSection);
+        return;
+    }
+
+    const {
+        name: country,
+        main: { temp, humidity },
+        weather: [{ id, main }],
+        wind: { speed },
+    } = weatherData;
+
+    countryTxt.textContent = country;
+    tempTxt.textContent = Math.round(temp) + ' °C';
+    conditionTxt.textContent = main;
+    humidityValueTxt.textContent = humidity + '%';
+    windValueTxt.textContent = speed + 'M/s';
+
+    currentDateTxt.textContent = getCurrentDate();
+    weatherSummaryImg.src = `weather/${getWeatherIcon(id)}`;
+
+    await updateForecastsInfo(city);
+    showDisplaySection(weatherInfoSection);
+}
