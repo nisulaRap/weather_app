@@ -110,3 +110,11 @@ function updateForecastItems(weatherData) {
 
     forecastItemsContainer.insertAdjacentHTML('beforeend', forecastItem);
 }
+
+function showDisplaySection(section) {
+    [weatherInfoSection, searchCitySection, notFoundSection].forEach(
+        (sec) => (sec.style.display = 'none')
+    );
+
+    section.style.display = 'flex';
+}
