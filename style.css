@@ -113,3 +113,18 @@ body::before {
 .weather-summary-info {
 	text-align: end;
 }
+
+.weather-conditions-container {
+	display: flex;
+	justify-content: space-between;
+}
+
+.condition-item {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+}
+
+.condition-item span {
+	font-size: 30px;
+}
