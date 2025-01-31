@@ -46,7 +46,7 @@ function getWeatherIcon(id) {
     if (id <= 531) return 'rain.svg';
     if (id <= 622) return 'snow.svg';
     if (id <= 781) return 'atmosphere.svg';
-    if (id === 800) return 'clear.svg';
+    if (id === 800) return 'day.svg';
     return 'sun_with_cloud.svg';
 }
 
