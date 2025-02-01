@@ -80,7 +80,7 @@ async function updateWeatherInfo(city) {
     tempTxt.textContent = Math.round(temp) + ' °C';
     conditionTxt.textContent = main;
     humidityValueTxt.textContent = humidity + '%';
-    windValueTxt.textContent = speed + 'M/s';
+    windValueTxt.textContent = speed + ' m/s';
 
     currentDateTxt.textContent = getCurrentDate();
     weatherSummaryImg.src = `weather/${getWeatherIcon(id)}`;
